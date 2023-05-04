@@ -1,8 +1,22 @@
 import React from 'react'
 
-const InfoBot = () => {
+const InfoBot = ({
+    title,
+    desc
+}) => {
     return (
-        <div>InfoBot</div>
+        <div className='info-bot'>
+            <div className='title'>
+                {
+                    title
+                }
+            </div>
+            <div className='desc'>
+                {
+                    desc
+                }
+            </div>
+        </div>
     )
 }
 
