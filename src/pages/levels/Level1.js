@@ -7,6 +7,7 @@ import Map4 from '../assets/images/map/map4.png'
 import Map5 from '../assets/images/map/map5.png'
 import Map6 from '../assets/images/map/map6.png'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 
 const Level1 = () => {
     const [rotateDeg1, setRotateDeg1] = useState(90);
@@ -58,10 +59,7 @@ const Level1 = () => {
 
     return (
         <div className='container'>
-            <div className='navbar'>
-                <div className='nav-left'></div>
-                <div className='nav-right'></div>
-            </div>
+            <Navbar />
             <div className='map-container'>
                 <div className='map'>
                     <div className='map-row'>
@@ -115,8 +113,8 @@ const Level1 = () => {
                 </div>
             </div>
             <InfoBot
-                title={"Level 1: Attention to Detail"}
-                desc={"The player is presented with a series of photographs of the expedition campsite, where they must find a hidden object in each photo by paying attention to small details. Once all objects are found, the player must use them to solve a puzzle that will provide a clue to the location of the next level"}
+                title={"Level 1: Map Restoration"}
+                desc={"You are an adventurer on a quest to find the lost city of El Dorado. While exploring the jungle, you stumble upon a torn map that appears to lead to the city. Your mission is to carefully examine and arrange the pieces of the map to correctly form it. Once you've restored the map, you'll be able to follow it to the location of the next level."}
             />
         </div>
     )

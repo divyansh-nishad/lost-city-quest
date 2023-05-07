@@ -1,6 +1,8 @@
 .container {
   width: 100vw;
   height: 100vh;
+  background: url("../pages/assets/images/bg1.jpg");
+  background-size: cover;
 }
 
 .navbar {
@@ -17,27 +19,265 @@
   justify-content: center;
   align-items: center;
 }
+.map-container .map {
+  padding: 10px;
+  border-radius: 20px;
+  width: 45%;
+  margin-left: 15%;
+  background: #fff;
+}
+.map-container .map .map-row {
+  display: flex;
+  justify-content: flex-end;
+}
 .map-container .map .map-row img {
   padding: 5px;
+  width: 200px;
 }
 
-.info-bot {
+.map-difference {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-difference .map {
+  display: flex;
+}
+.map-difference .map img {
+  width: 50%;
+}
+
+.check1 {
   position: absolute;
+  top: 100px;
+  left: 500px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.check2 {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.check3 {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.check4 {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.check5 {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.check6 {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  z-index: 100;
+}
+
+.info-main {
+  height: 90vh;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.info-main .info-bot {
+  margin-top: 100px;
+  height: 35%;
   display: flex;
   flex-direction: column;
   width: 300px;
+  margin-left: 20px;
   gap: 1rem;
-  bottom: 10px;
-  left: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 1rem;
   background: #efefef;
 }
-.info-bot .title {
+.info-main .title {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.info-bot .description {
+.info-main .description {
+  font-size: 1rem;
+}
+.info-main img {
+  width: 300px;
+  height: 300px;
+}
+
+.pipe-container {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
+}
+.pipe-container .pipe .pipe-row img {
+  padding: 5px;
+  width: 10%;
+  height: 10%;
+}
+
+.level2-main {
+  width: 100vw;
+  height: 100vh;
+  background: url("../pages/assets/images/bg1.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.level2-main .gear-main {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 30px;
+  margin-left: 20rem;
+}
+.level2-main .gear-main .question {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+.level2-main .gear-main .question .level4-input {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue;
+}
+.level2-main .gear-main .question .level4-input:focus {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: green;
+}
+.level2-main .gear-main .question h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.level2-main .gear-main .question button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 60%;
+}
+.level2-main .gear-main .button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+.level2-main .gear-main .button-container button {
+  padding: 0.5rem;
+  border: 1px;
+  border-radius: 5px;
+  outline: none;
+  background-color: #4681f4;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.level2-main .gear-main .button-container-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.level2-main .gear-main .button-container-2 button {
+  padding: 0.5rem;
+  width: 30%;
+  background-color: lightgreen;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.level2-main .gear-main-6 {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 30px;
+  margin-left: 20rem;
+  align-items: center;
+}
+.level2-main .gear-main-6 h2, .level2-main .gear-main-6 p {
+  padding: 0.5rem;
+}
+.level2-main .start-6 button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 10rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  border-radius: 15px;
+  margin-left: 20rem;
+  align-items: center;
+  padding: 0.5rem;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.level2-main .gear-main-8 {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 30px;
+  margin-left: 20rem;
+  width: 50%;
+}
+.level2-main .gear-main-8 .question {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+.level2-main .gear-main-8 .question h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.level2-main .gear-main-8 .question button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 60%;
+  font-family: "Balsamiq Sans", cursive;
   font-size: 1rem;
 }/*# sourceMappingURL=App.css.map */
