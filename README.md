@@ -1,22 +1,35 @@
 # The Lost City Quest
-The Lost City Quest is an interactive web-based puzzle game designed to assess and improve the player's soft skills. The game consists of eight levels, each of which tests a specific soft skill, such as attention to detail, problem-solving, communication, perseverance, teamwork, time management, adaptability, and decision-making.
+The Lost City Quest is an interactive web-based puzzle game designed to assess and improve the player's soft skills. The game consists of seven levels, each of which tests a specific soft skill, such as attention to detail, problem-solving, communication, perseverance, teamwork, time management, adaptability, and decision-making.
 
 ## How to Play
-To play the game, simply navigate to the game website and click on the "Start Game" button. You will be taken to the first level, where you will be presented with a puzzle or challenge that tests your soft skills. To advance to the next level, you must successfully complete the puzzle or challenge.
+To play the game, simply navigate to the game website and click on the "Login" button. You will be taken to the first level, where you will be presented with a puzzle or challenge that tests your soft skills. To advance to the next level, you must successfully complete the puzzle or challenge.
 
 As you progress through the levels, the puzzles and challenges become more difficult and require more advanced soft skills. The game keeps track of your progress and provides feedback on your performance at the end of each level.
 
 ## Technologies Used
 - React Js
+- Firebase
+- SASS
+- Bootstrap
+- Cloud Firestore
 
 ## Installation
-To install the game locally, simply download the source code from the game's GitHub repository and open the index.html file in your web browser.
+To install the game locally, simply download the source code from the game's GitHub repository and run the following command:
+
+```
+npm install
+```
+Once the dependencies are installed, run the following command to start the game:
+
+```
+npm start
+```
+The game will then be accessible at http://localhost:3000 in your web browser.
 
 ## Features
 The Lost City Quest includes the following features:
 
-- Eight levels, each of which tests a specific soft skill
-- Responsive design that works on a wide range of devices and screen sizes
+- Seven levels, each of which tests a specific soft skill
 - Automatic progress tracking and feedback on performance
 - Engaging puzzles and challenges that are fun and educational
 - Future Improvements
