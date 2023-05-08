@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Navbar from '../../components/Navbar'
 import InfoBot from '../../components/InfoBot'
+import { useNavigate } from 'react-router-dom'
 import Map from '../assets/images/map/map.png'
-
+import firebase from '../../components/firebase'
 const Level2 = () => {
+    const userID = firebase.auth().currentUser.uid;
+    const levels = firebase.firestore().collection('users').doc(userID);
     const [isUnlocked, setIsUnlocked] = useState(false);
+    const nav = useNavigate()
     const [gearPositions, setGearPositions] = useState({
         gearOne: 0,
         gearTwo: 0,
@@ -24,9 +28,8 @@ const Level2 = () => {
     }, []);
 
     useEffect(() => {
-        if (timer === 0) {
+        if (timer === 0 && !isUnlocked) {
             alert("Time's up! You lose.");
-            window.location.reload();
         }
     }, [timer]);
 
@@ -59,11 +62,20 @@ const Level2 = () => {
         <div className="level2-main">
             {isUnlocked ? (
                 <div>
-                    <h2>Level 2: Problem Solving</h2>
-                    <p>Unlock the door by manipulating the gears and levers.</p>
+                    <h2>Congratulations! </h2>
+
                     <p>You have unlocked the door!</p>
-                    <button onClick={() => alert("Congratulations! You win!")}>
-                        Proceed to the next level
+                    <button onClick={() => {
+                        levels.update({
+                            level: 2,
+                            score: 8
+                        })
+                        nav('/level3')
+                    }
+                    }
+
+                    >
+                        Next Level {`>>`}
                     </button>
                 </div>
             ) : (
@@ -110,7 +122,8 @@ const Level2 = () => {
             )}
             <InfoBot
                 title="Level 2: Gear Puzzle"
-                desc="You arrive at a mysterious temple that appears to have been abandoned for centuries. As you explore its interior, you discover a complex system of gears and levers that must be manipulated in the correct sequence to unlock a door leading to the next level. The challenge is to use your problem-solving skills to figure out the correct order of movements to unlock the door and progress to the next level."
+                desc="To unlock the door, manipulate the gears/levers A, B, C, D, and E. A, B, and C are at 0 and D is locked. 
+             Here are the clues: Set A to the smallest prime, set B to the forth prime number, and set C to the smallest 2-digit palindrome. D and E are levers. D is locked and is unlocked by tapping it."
             />
         </div>
     );

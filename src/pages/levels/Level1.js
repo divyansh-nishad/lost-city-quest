@@ -8,8 +8,10 @@ import Map5 from '../assets/images/map/map5.png'
 import Map6 from '../assets/images/map/map6.png'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
-
+import firebase from '../../components/firebase'
 const Level1 = () => {
+    const userID = firebase.auth().currentUser.uid;
+    const levels = firebase.firestore().collection('users').doc(userID);
     const [rotateDeg1, setRotateDeg1] = useState(90);
     const [count1, setCount1] = useState(2)
     const [rotateDeg2, setRotateDeg2] = useState(180);
@@ -52,17 +54,30 @@ const Level1 = () => {
 
     useEffect(() => {
         if (count1 % 4 === 1 && count2 % 4 === 1 && count3 % 4 === 1 && count4 % 4 === 1 && count5 % 4 === 1 && count6 % 4 === 1) {
-            nav('/level2')
+
+            setTimeout(() => {
+                alert('Congratulations! You have completed this level! Move on to the next level!');
+                // create a new field in the user document to indicate that the user has completed this level.
+                levels.set({
+                    // level : firebase.firestore.FieldValue.increment(1)
+                    // update the level to 1
+                    level: 1,
+                    score: 4,
+                    email: firebase.auth().currentUser.email
+                })
+                nav('/level2');
+            }, 1000);
         }
     }, [count1, count2, count3, count4, count5, count6])
 
 
     return (
-        <div className='container'>
+        <div className='container-c'>
             <Navbar />
             <div className='map-container'>
                 <div className='map'>
                     <div className='map-row'>
+
                         <img
                             src={Map1}
                             alt='map1'

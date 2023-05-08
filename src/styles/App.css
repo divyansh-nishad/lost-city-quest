@@ -1,8 +1,9 @@
-.container {
+.container-c {
   width: 100vw;
   height: 100vh;
   background: url("../pages/assets/images/bg1.jpg");
   background-size: cover;
+  overflow: hidden;
 }
 
 .navbar {
@@ -24,7 +25,6 @@
   border-radius: 20px;
   width: 45%;
   margin-left: 15%;
-  background: #fff;
 }
 .map-container .map .map-row {
   display: flex;
@@ -107,7 +107,7 @@
   z-index: 100;
 }
 
-.info-main {
+.info-main-t {
   height: 90vh;
   position: absolute;
   bottom: 0px;
@@ -118,12 +118,12 @@
   align-items: flex-end;
   justify-content: space-around;
 }
-.info-main .info-bot {
+.info-main-t .info-bot-t {
   margin-top: 100px;
   height: 35%;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 30vw;
   margin-left: 20px;
   gap: 1rem;
   border: 1px solid #ccc;
@@ -131,14 +131,14 @@
   padding: 1rem;
   background: #efefef;
 }
-.info-main .title {
+.info-main-t .title-t {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.info-main .description {
+.info-main-t .description {
   font-size: 1rem;
 }
-.info-main img {
+.info-main-t .info-img-1 {
   width: 300px;
   height: 300px;
 }
@@ -158,7 +158,7 @@
 }
 
 .level2-main {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: url("../pages/assets/images/bg1.jpg");
   background-size: cover;
@@ -227,6 +227,12 @@
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.level2-main .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .level2-main .gear-main-6 {
   display: flex;
   flex-direction: column;
@@ -280,4 +286,21 @@
   width: 60%;
   font-family: "Balsamiq Sans", cursive;
   font-size: 1rem;
+}
+
+.admin-dash {
+  width: 100vw;
+  height: 100vh;
+  background: url("../pages/assets/images/bg1.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-dash table {
+  margin: 3rem;
+  background: #fff;
+}
+.admin-dash table thead {
+  background: #ececec;
 }/*# sourceMappingURL=App.css.map */

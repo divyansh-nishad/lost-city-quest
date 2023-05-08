@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import firebase from '../../components/firebase'
 import InfoBot from '../../components/InfoBot'
 import Pipe1 from '../assets/images/pipe/pipe1.jpg'
 import Pipe2 from '../assets/images/pipe/pipe2.jpg'
@@ -29,6 +30,8 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 
 const Level7 = () => {
+    const userID = firebase.auth().currentUser.uid;
+    const levels = firebase.firestore().collection('users').doc(userID);
     const [rotateDeg1, setRotateDeg1] = useState(90);
     const [count1, setCount1] = useState(2)
     const [rotateDeg2, setRotateDeg2] = useState(180);
@@ -187,7 +190,15 @@ const Level7 = () => {
 
     useEffect(() => {
         if (count1 % 4 === 1 && count2 % 4 === 1 && count3 % 4 === 1 && count4 % 4 === 1 && count5 % 4 === 1 && (count6 % 4 === 1 || count6 % 4 === 3) && (count7 % 4 === 1 || count7 % 4 === 3) && count8 % 4 === 1 && count9 % 4 === 1 && (count10 % 4 === 1 || count10 % 4 === 3) && (count11 % 4 === 1 || count11 % 4 === 3) && (count12 % 4 === 1 || count12 % 4 === 3) && count13 % 4 === 1 && count14 % 4 === 1 && count15 % 4 === 1 && (count16 % 4 === 1 || count16 % 4 === 3) && count17 % 4 === 1 && count18 % 4 === 1 && count19 % 4 === 1 && count20 % 4 === 1 && count21 % 4 === 1 && count22 % 4 === 1 && count23 % 4 === 1 && (count24 % 4 === 1 || count24 % 4 === 3) && count25 % 4 === 1) {
-            nav('/level8')
+            // if completed the level then alert after 3 seconds and navigate to next level
+            setTimeout(() => {
+                alert('Congratulations! You have completed this level! Move on to the next level!');
+                levels.update({
+                    level: 6,
+                    score: firebase.firestore.FieldValue.increment(4)
+                })
+               nav('/level8');
+            }, 1000);
         }
     }, [count1, count2, count3, count4, count5, count6, count7, count8, count9, count10, count11, count12, count13, count14, count15, count16, count17, count18, count19, count20, count21, count22, count23, count24, count25])
 

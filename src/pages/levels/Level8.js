@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import InfoBot from '../../components/InfoBot';
+import firebase from '../../components/firebase'
+import { useNavigate } from 'react-router-dom';
 
 const questions = [
     {
@@ -25,6 +27,9 @@ const questions = [
 ];
 
 const Level8 = () => {
+    const nav = useNavigate()
+    const userID = firebase.auth().currentUser.uid;
+    const levels = firebase.firestore().collection('users').doc(userID);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
 
@@ -37,8 +42,14 @@ const Level8 = () => {
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
         } else {
+            alert(`Congratulations! You have completed the game.`)
+            levels.update({
+                level: 7,
+                score: firebase.firestore.FieldValue.increment(score)
+            })
+            nav('/admin');
             // Quiz is over, show score
-            alert(`Your final score is ${score} out of ${questions.length}`);
+            // alert(`Your final score is ${score} out of ${questions.length}`);
         }
     };
 

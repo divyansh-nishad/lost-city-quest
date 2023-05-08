@@ -1,12 +1,17 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import InfoBot from '../../components/InfoBot'
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import firebase from '../../components/firebase'
 
 const TIME_LIMIT = 5;
 
 
 const Level6 = () => {
+    const nav = useNavigate();
+    const userID = firebase.auth().currentUser.uid;
+    const levels = firebase.firestore().collection('users').doc(userID);
     const [currentPuzzle, setCurrentPuzzle] = useState(2);
     const [timeRemaining, setTimeRemaining] = useState(TIME_LIMIT);
     const [score, setScore] = useState(0);
@@ -62,6 +67,18 @@ const Level6 = () => {
                     <h2>Congratulations!</h2>
                     <p>You have completed all the puzzles.</p>
                     <p>Final score: {score}</p>
+                    <button onClick={() => {
+                        levels.update({
+                            level: 5,
+                            score: 16+score
+                        })
+                        nav('/level7')
+                    }
+                    }
+
+                    >
+                        Next Level {`>>`}
+                    </button>
                 </div>
             ) : gameStarted ? (
                 <div className='gear-main-6'>
