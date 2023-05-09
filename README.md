@@ -48,8 +48,17 @@ The Lost City Quest includes the following features:
 - Automatic progress tracking and feedback on performance
 - Engaging puzzles and challenges that are fun and educational
 - Future Improvements
-- We are constantly working to improve The Lost City Quest and plan to add the following features in future updates:
+ We are constantly working to improve The Lost City Quest and plan to add the following features in future updates:
 
-- More levels that test additional soft skills
-- Multiplayer mode that allows players to compete or collaborate with each other
-- Advanced analytics that provide detailed insights into the player's performance and soft skills development
+ More levels that test additional soft skills
+
+
+## Implementated Features
+-Anyone with an email address can create an Id and password to participate in the game
+-The puzzle must contain
+    Minimum 5 clues
+    Minimum 2 dead-ends
+    Minimum 1 solution 
+-All the progress of the puzzle requirements is stored for every user
+-On refreshing, from either browser or website, user needs to login again
+-A dashboard for the admin where the progress of all the users can be tracked & analyzed
