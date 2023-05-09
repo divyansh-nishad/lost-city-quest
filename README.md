@@ -13,6 +13,21 @@ As you progress through the levels, the puzzles and challenges become more diffi
 - Bootstrap
 - Cloud Firestore
 
+## Soft Skills Tested
+- Level 1: Attention to Detail
+- Level 2: Problem Solving
+- Level 3: Communication
+- Level 4: Perseverance
+- Level 5: Time Management
+- Level 6: Adaptability
+- Level 7: Decision Making
+
+## Solution
+- Level 3 : BEDFICHGJA
+- Level 4 : needle, bottle, envelope, future
+- Level 5 : 6, 12, 20, 30, 42, 56
+- Level 7: You can make any decision you want, you will still be able to complete the game but you would be evaluated on the basis of your decision.
+
 ## Installation
 To install the game locally, simply download the source code from the game's GitHub repository and run the following command:
 
