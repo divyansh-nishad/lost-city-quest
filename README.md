@@ -54,11 +54,16 @@ The Lost City Quest includes the following features:
 
 
 ## Implementated Features
+
 -Anyone with an email address can create an Id and password to participate in the game
+
 -The puzzle must contain
     Minimum 5 clues
     Minimum 2 dead-ends
     Minimum 1 solution 
+
 -All the progress of the puzzle requirements is stored for every user
+
 -On refreshing, from either browser or website, user needs to login again
+
 -A dashboard for the admin where the progress of all the users can be tracked & analyzed
