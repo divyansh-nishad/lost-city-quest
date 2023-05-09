@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../../components/firebase';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom'
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
+  const nav = useNavigate()
 
   useEffect(() => {
     // fetch all users from Firestore
@@ -37,6 +40,11 @@ const AdminDashboard = () => {
           ))}
         </tbody>
       </table>
+      <Button className="mx-2" variant='info'
+        onClick={() => nav('/')}
+      >
+        Home
+      </Button>
     </div>
   );
 };
